@@ -1443,7 +1443,7 @@ static cJSON_bool print_value(const cJSON * const item, printbuffer * const outp
             {
                 return false;
             }
-            memcpy(output, item->valuestring, raw_length);
+            unsigned char* output_dest = memcpy(output, item->valuestring, raw_length);
             return true;
         }
 
