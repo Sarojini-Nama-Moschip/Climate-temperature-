@@ -201,7 +201,7 @@ static unsigned char* cJSON_strdup(const unsigned char* string, const internal_h
     {
         return NULL;
     }
-    unsigned char *copy_dest = memcpy(copy, string, length);
+    memcpy(copy, string, length);
 
     return copy;
 }
@@ -1443,7 +1443,7 @@ static cJSON_bool print_value(const cJSON * const item, printbuffer * const outp
             {
                 return false;
             }
-            unsigned char* output_dest = memcpy(output, item->valuestring, raw_length);
+            memcpy(output, item->valuestring, raw_length);
             return true;
         }
 
